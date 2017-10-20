@@ -1,0 +1,74 @@
+{
+  "name": "cssplus-preprocessor",
+  "version": "1.0.0",
+  "description": "A future-facing CSS preprocessor for working with cssplus",
+  "main": "lib/index.js",
+  "bin": {
+    "cssplus": "bin/cssplus"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "dependencies": {
+    "autoprefixer": "^6.7.7",
+    "chokidar": "^1.3.0",
+    "colors": "^1.1.2",
+    "commander": "^2.9.0",
+    "cssnano": "^3.3.2",
+    "fs-extra": "^2.1.2",
+    "is-promise": "^2.1.0",
+    "lodash.difference": "^4.0.2",
+    "lodash.isempty": "^4.1.1",
+    "object-assign-deep": "0.0.4",
+    "pad-component": "0.0.1",
+    "pify": "^2.3.0",
+    "postcss": "^6.0.13",
+    "postcss-cssplus": "^1.1.0",
+    "postcss-simple-reset": "^1.1.1",
+    "postcss-autoreset": "^1.2.0",
+    "postcss-bem-linter": "^2.3.0",
+    "postcss-easy-import": "^2.0.0",
+    "postcss-reporter": "^3.0.0",
+    "read-file-stdin": "^0.2.1",
+    "stylelint": "^8.2.0",
+    "stylelint-config-cssplus": "^1.0.1"
+  },
+  "devDependencies": {
+    "browserify": "^14.3.0",
+    "browserify-css": "^0.10.0",
+    "chai": "^3.4.1",
+    "chai-as-promised": "^6.0.0",
+    "computed-style": "^0.3.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.1.3",
+    "eslint-plugin-import": "^2.2.0",
+    "mocha": "^3.2.0",
+    "postcss-property-lookup": "^1.1.4",
+    "rewire": "^2.5.1",
+    "sinon": "^2.1.0",
+    "tape": "^4.6.2",
+    "tape-css": "^1.0.2-beta",
+    "tape-run": "^3.0.0"
+  },
+  "scripts": {
+    "test": "npm run mocha && npm run test:encapsulation",
+    "test:encapsulation": "browserify -t [ browserify-css --autoInject=false ] test/encapsulation/browser.js | tape-run",
+    "mocha": "mocha test/index.js --reporter spec --slow 400 --timeout 8000",
+    "posttest": "npm run lint",
+    "lint": "eslint lib test bin/cssplus",
+    "watch": "npm run mocha -- --watch"
+  },
+  "keywords": [
+    "css",
+    "preprocessor",
+    "stylelint",
+    "pure",
+    "postcss"
+  ],
+  "authors": [
+    "moocss <moocss@gmail.com> (https://github.com/moocss)"
+  ],
+  "repository": "git://github.com/thoughtbit/preprocessor.git",
+  "license": "MIT"
+}
