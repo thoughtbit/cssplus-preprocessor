@@ -51,6 +51,16 @@ describe('cli', () => {
     });
   });
 
+  it('should reset the output', done => {
+    exec('node bin/cssplus -i test/fixtures -c test/config/noautoprefixer.js test/fixtures/reset.css test/fixtures/cli/output.css', err => {
+      if (err) return done(err);
+      const res = util.read('fixtures/cli/output');
+      const expected = util.read('fixtures/reset.out');
+      expect(res).to.equal(expected);
+      done();
+    });
+  });
+
   it('should allow configurable import root', done => {
     exec('node bin/cssplus -i test/fixtures -c test/config/noautoprefixer.js test/fixtures/import.css test/fixtures/cli/output.css', err => {
       if (err) return done(err);

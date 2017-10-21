@@ -1,6 +1,6 @@
 # cssplus-preprocessor
 
-> A future-facing CSS preprocessor for working with cssplus, clone [suitcss-preprocessor](https://github.com/suitcss/preprocessor).
+> A future-facing CSS preprocessor for working with cssplus; clone [suitcss-preprocessor](https://github.com/suitcss/preprocessor).
 
 Provides a CLI and Node.js interface for a preprocessor that combines
 various [PostCSS](https://github.com/postcss/postcss) plugins.
@@ -267,17 +267,18 @@ which is the recommended approach in a SUIT CSS application.
 * Type: `Boolean`
 * Default: `true`
 
-[stylelint-config-cssplus](https://github.com/thoughtbit/stylelint-config-cssplus) package.
+Ensure code conforms to the [SUIT code style](https://github.com/suitcss/suit/blob/master/doc/STYLE.md)
+by using the [stylelint-config-suitcss](https://github.com/suitcss/stylelint-config-suitcss) package.
 
 Stylelint [configuration
 options](http://stylelint.io/?/docs/user-guide/configuration.md) can also be
-overridden but this requires the `stylelint-config-cssplus` to be installed
+overridden but this requires the `stylelint-config-suitcss` to be installed
 locally in your package.
 
 ```js
 {
   stylelint: {
-    extends: 'stylelint-config-cssplus',
+    extends: 'stylelint-config-suitcss',
     rules: {
       indentation: [4, 'tab'],
     }
@@ -377,7 +378,7 @@ module.exports = {
   "version": "0.1.0",
   "dependencies": {
     "postcss-property-lookup": "^1.1.3",
-    "cssplus-preprocessor": "^1.0.0"
+    "cssplus-preprocessor": "^0.5.0"
   },
   "scripts": {
     "preprocess": "cssplus -c myconfig.js index.css build/built.css"
@@ -397,22 +398,22 @@ If duplicate plugins are used they will be removed, but the new order will be re
 // Default order
 var defaults = [
   'postcss-cssplus',
-  'postcss-simple-reset'
+  'postcss-simple-reset',
 ];
 
 // config
 module.exports = {
   use: [
-    'postcss-mixins',
-    'postcss-extend',
+    'postcss-at2x',
+    'postcss-calc',
   ]
 };
 
 var result = [
   'postcss-cssplus',
   'postcss-simple-reset',
-  'postcss-mixins',
-  'postcss-extend',
+  'postcss-at2x',
+  'postcss-calc',
 ];
 ```
 

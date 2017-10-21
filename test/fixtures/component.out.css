@@ -12,10 +12,12 @@
 
 .Component-item {
   display: flex;
+
   color: green;
 }
 
 @media (min-width: 200px) {
+
   .Component-item {
     color: red;
   }

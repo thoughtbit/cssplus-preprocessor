@@ -32,7 +32,7 @@ describe('stylelint', () => {
     cssplus(util.read('fixtures/component'), {
       root: 'test/fixtures',
       'postcss-reporter': {
-        throwError: false
+        throwError: true
       }
     })
   ).to.be.fulfilled);
@@ -41,7 +41,7 @@ describe('stylelint', () => {
     cssplus('@import "./stylelint.css"\n\n', {
       root: 'test/fixtures',
       stylelint: {
-        extends: 'stylelint-config-cssplus',
+        extends: 'stylelint-config-suitcss',
         rules: {
           indentation: 4
         }

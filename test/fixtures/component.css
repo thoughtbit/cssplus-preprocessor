@@ -18,10 +18,12 @@
 
 .Component-item {
   display: flex;
+
   @apply --Component-color;
 }
 
 @media (--media-query) {
+
   .Component-item {
     color: red;
   }
