@@ -1,6 +1,6 @@
 {
   "name": "cssplus-preprocessor",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A CSS preprocessor for working with SUIT CSS",
   "main": "lib/index.js",
   "bin": {
@@ -23,14 +23,9 @@
     "object-assign-deep": "0.0.4",
     "pad-component": "0.0.1",
     "pify": "^2.3.0",
-    "postcss": "^5.2.17",
-    "postcss-apply": "^0.6.1",
+    "postcss": "^6.0.11",
     "postcss-autoreset": "^1.2.0",
     "postcss-bem-linter": "^2.3.0",
-    "postcss-calc": "^5.0.0",
-    "postcss-color-function": "^3.0.0",
-    "postcss-custom-media": "^5.0.0",
-    "postcss-custom-properties": "^5.0.0",
     "postcss-cssplus": "^1.1.0",
     "postcss-simple-reset": "^1.1.1",
     "postcss-easy-import": "^2.0.0",
@@ -62,7 +57,8 @@
     "mocha": "mocha test/index.js --reporter spec --slow 400 --timeout 8000",
     "posttest": "npm run lint",
     "lint": "eslint lib test bin/cssplus",
-    "watch": "npm run mocha -- --watch"
+    "watch": "npm run mocha -- --watch",
+    "build": "node bin/cssplus -i test/fixtures -c test/config/noautoprefixer.js test/fixtures/reset.css 111111.css"
   },
   "keywords": [
     "css",

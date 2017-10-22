@@ -3,6 +3,23 @@
 /* -----------------------------------------------------------------------------
   screen styles
 ----------------------------------------------------------------------------- */
+:root {
+  --color: #333;
+  --link-color: #007bff;
+  --link-hover-color: #f00;
+}
+
+body {
+  color: var(--color);
+}
+
+a {
+  color: var(--link-color);
+
+  &:hover {
+    color: var(--link-hover-color);
+  }
+}
 
 .table {
   @reset nested("table");
